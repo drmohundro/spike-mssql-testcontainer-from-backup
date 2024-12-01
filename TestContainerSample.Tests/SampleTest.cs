@@ -8,7 +8,8 @@ public class MsSqlTestContainerTests : IAsyncLifetime
 {
     private const string Password = "Password1234!";
 
-    private readonly MsSqlContainer _sqlContainer = new MsSqlBuilderWithBackup()
+    private readonly MsSqlContainer _sqlContainer = new MsSqlBuilder()
+        .WithImage("testcontainer-withbackup")
         .WithPassword(Password)
         .Build();
 

@@ -32,7 +32,7 @@ Keep in mind that this is just the proof of concept side of things.
 
 The included `Dockerfile` creates a new mssql image, but it copies a `bak` file in and restores it. The final stage copies the entire SQL Server data directory over so that you now have a SQL Server with a database ready to go.
 
-Then, the included `MsSqlBuilderWithBackup` is a slightly modified version of TestContainers.MsSql except it uses the image name of the newly built container instead.
+Then, you use `MsSqlBuilder` as usual, except you use the `WithImage()` method to pass in the name of your image with the backup ready to go.
 
 ## Resources
 
